@@ -59,6 +59,29 @@ document.addEventListener('DOMContentLoaded', function() { // Added a event list
   
    
     let contents = [tab1, tab2, tab3]; // Store the tab contents in an array for easy iteration.
+
+   
+  function hideAllTabs() { // Function to hide all tab contents by setting their display to 'none'.
+    contents.forEach(content => { // Loop through each tab content element.
+      content.style.display = 'none'; // Hide the content element by setting its display property to 'none'.
+    });
+  }
+  
+  function showTab(tabId) { // Function to show a specific tab content by its ID.
+    hideAllTabs(); // Hide all tabs first.
+    document.getElementById(tabId).style.display = 'block'; // Display the specified tab content.
+  }
+
+  showTab('tab1'); // Set the default tab to be visible (the first tab).
+
+  // Add click event listeners to each tab link.
+  tabs.forEach(tab => { // Start iterating over each element in the `tabs` array
+    tab.addEventListener('click', function(event) { // Adding a 'click' event listener to each tab link element
+      event.preventDefault(); // Prevents the default link behavior (stops the page from navigating).
+      let tabId = this.id.replace('Link', ''); // Extracts the tab ID from the link ID ('tab1Link' becomes 'tab1').
+      showTab(tabId); // Shows the matching tab content.
+    });
   });
+});
   
   
