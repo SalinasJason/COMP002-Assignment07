@@ -43,3 +43,22 @@ document.addEventListener('keydown', function(event) { // Adding a eventlistener
 // function as expected. There are many ways to accomplish this task, but you will need
 // to at minimum add listeners to each link and toggle the display of the tab contents.
 // Hint: display: none; hides an element, and display: block; will bring it
+
+document.addEventListener('DOMContentLoaded', function() { // Added a event listener that triggers when the html content is completely loaded.
+  
+    let tab1Link = document.getElementById('tab1Link'); // Declaring a variable name tab1Link and using getElementById to find the html element.
+    let tab2Link = document.getElementById('tab2Link'); // Declaring a variable name tab2Link and using getElementById to find the html element.
+    let tab3Link = document.getElementById('tab3Link'); // Declaring a variable name tab3Link and using getElementById to find the html element.
+  
+    let tab1 = document.getElementById('tab1'); // Declaring a variable name tab1 and using getElementById to find the html element.
+    let tab2 = document.getElementById('tab2'); // Declaring a variable name tab2 and using getElementById to find the html element.
+    let tab3 = document.getElementById('tab3'); // Declaring a variable name tab3 and using getElementById to find the html element.
+  
+  
+    let tabs = [tab1Link, tab2Link, tab3Link];  // Store the tab links in an array for easy iteration.
+  
+   
+    let contents = [tab1, tab2, tab3]; // Store the tab contents in an array for easy iteration.
+  });
+  
+  
