@@ -18,6 +18,13 @@ let fontSize = 20; // Declaring a variable name fontSize and assigning the value
 document.addEventListener('keydown', function(event) { // Adding a eventlistener "keydown" and event handler.
     console.log('Key pressed:', event.key); // console logs the key that was pressed.
     console.log('Event details:', event); // console logs the event details.
+    if (event.key === 'ArrowUp') { // Checks if ArrowUp key is pressed.
+        fontSize *= 1.10; // Increase size by 10%, its multiplying the fontSize value which is 20 by 1.10 and returns the new value then continues to multiply the new value by 1.10 every time the up arrow key is pressed.
+        balloon.style.fontSize = fontSize + 'px'; // Sets the ballon element to the new value 22px.
+      } else if (event.key === 'ArrowDown') { // Checks if ArrowDown key is pressed.
+        fontSize *= 0.90; // Decrease size by 10%, its multiplying the fontSize value 20 by 0.90 and returns the new value then continues to multiply the new value by 0.90 every time the down arrow key is pressed..
+        balloon.style.fontSize = fontSize + 'px'; // Sets the ballon element to the new value 18px
+      }
 });
 
 
